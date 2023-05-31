@@ -14,18 +14,28 @@ using namespace std;
 // Core banking systems (bankAPI)
 class bankAPI {
 private:
-    ll balance = 0;
+    struct USER {
+        ll cardInfo = 12341234;
+        int PIN = 1234;
+        ll accounNumber = 123412341234;
+    } user;
+
+    struct ACCOUNT {
+        ll accounNumber = 123412341234;
+        ll balance = 0;
+    } account;
+
 public:
     bool checkPIN(int PIN) {
-        return PIN == 1234;
+        return user.PIN == PIN;
     }
 
     ll getBalance() {
-        return balance;
+        return account.balance;
     }
 
     bool setBalance(ll delta) {
-        balance += delta;
+        account.balance += delta;
         return true;
     }
 };
