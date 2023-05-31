@@ -33,7 +33,7 @@ public:
 // A system between ATMs (client) and core banking systems (bankAPI)
 class ATMC {
 private:
-   int cashBin = 0;
+   ll cashBin = 0;
    bankAPI api;
 public:
     void checkPIN() {}
@@ -53,13 +53,13 @@ class CLIENT {
 private:
     struct ACCOUNT {
         string number = "";
-        int balance = 0;
+        ll balance = 0;
     } account;
     ATMC atmc;
 public:
     void insertCard() {}
 
-    int getBalance(bool menu = false) {
+    ll getBalance(bool menu = false) {
         ll balance = atmc.getBalance();
 
         if (menu) {
@@ -69,8 +69,8 @@ public:
         return balance;
     }
 
-    bool setBalance(int amount) {
-        int transaction = getBalance() + amount;
+    bool setBalance(ll amount) {
+        ll transaction = getBalance() + amount;
 
         if (transaction > -1) {
             return atmc.setBalance(amount);
@@ -79,7 +79,7 @@ public:
     }
 
     bool deposit() {
-        int amount = 0;
+        ll amount = 0;
 
         cout << "[$] Enter amount to be Deposited\n$";
         cin >> amount;
@@ -87,12 +87,12 @@ public:
         return setBalance(amount);
     }
 
-    bool deposit(int amount) {
+    bool deposit(ll amount) {
         return setBalance(amount);
     }
 
-    bool withdraw(int amount = 0) {
-        int value = 0;
+    bool withdraw(ll amount = 0) {
+        ll value = 0;
 
         if (amount == 0) {
             cout << "[$] Enter amount to withdraw\n$";
