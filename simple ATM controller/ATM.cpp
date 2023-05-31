@@ -13,7 +13,7 @@ typedef long long ll;
 using namespace std;
 
 // An ATM (client)
-class CLIENT {
+class ATM {
 private:
     ATMC controller;
 

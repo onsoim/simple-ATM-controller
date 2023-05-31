@@ -6,14 +6,14 @@
 //
 
 #include <iostream>
-#include "CLIENT.cpp"
+#include "ATM.cpp"
 
 typedef long long ll;
 
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    CLIENT client;
+    ATM atm;
     int menu = -1;
 
     while (1) {
@@ -27,16 +27,16 @@ int main(int argc, const char * argv[]) {
         cin >> menu;
         switch (menu) {
             case 1:
-                client.getBalance(true);
+                atm.getBalance(true);
                 break;
             case 2:
-                if (client.deposit()) {
-                    client.getBalance(true);
+                if (atm.deposit()) {
+                    atm.getBalance(true);
                 }
                 break;
             case 3:
-                if (client.withdraw()) {
-                    client.getBalance(true);
+                if (atm.withdraw()) {
+                    atm.getBalance(true);
                 }
                 else {
                     cout << "[!] Can't withdraw money!" << endl << endl;
