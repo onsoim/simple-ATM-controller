@@ -69,12 +69,12 @@ public:
 // An ATM (client)
 class CLIENT {
 private:
-    ATMC atmc;
+    ATMC controller;
 public:
     void insertCard() {}
 
     ll getBalance(bool menu = false) {
-        ll balance = atmc.getBalance();
+        ll balance = controller.getBalance();
 
         if (menu) {
             cout << "[$] Balance is: $" << balance << endl << endl;
@@ -85,7 +85,7 @@ public:
 
     bool setBalance(ll amount) {
         if (getBalance() + amount > -1) {
-            return atmc.setBalance(amount);
+            return controller.setBalance(amount);
         }
         return false;
     }
