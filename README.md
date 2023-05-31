@@ -31,7 +31,7 @@ The purpose of this project is **write code for a simple ATM controller** with f
 
 1. git clone https://github.com/onsoim/simple-ATM-controller ATMC
 2. cd ATMC/simple\ ATM\ controller
-3. clang++ main.cpp CLIENT.cpp ATMC.cpp bankAPI.cpp -o ATMC
+3. g++ main.cpp ATM.cpp ATMC.cpp bankAPI.cpp -o ATMC
 4. ./ATMC
 
 or just import a project using XCode
