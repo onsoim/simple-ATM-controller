@@ -7,38 +7,73 @@
 
 #include <iostream>
 
+typedef long long ll;
+
 using namespace std;
 
-//class ATMC {
-//private:
-//    int cashBin = 0;
-//
-//};
+// Core banking systems (bankAPI)
+class bankAPI {
+private:
+    ll balance = 0;
+public:
+    bool checkPIN(int PIN) {
+        return PIN == 1234;
+    }
 
+    ll getBalance() {
+        return balance;
+    }
+
+    bool setBalance(ll delta) {
+        balance += delta;
+        return true;
+    }
+};
+
+// A system between ATMs (client) and core banking systems (bankAPI)
+class ATMC {
+private:
+   int cashBin = 0;
+   bankAPI api;
+public:
+    void checkPIN() {}
+    void setAccount() {}
+
+    ll getBalance() {
+        return api.getBalance();
+    }
+
+    bool setBalance(ll delta) {
+        return api.setBalance(delta);
+    }
+};
+
+// An ATM (client)
 class CLIENT {
 private:
     struct ACCOUNT {
         string number = "";
         int balance = 0;
     } account;
+    ATMC atmc;
 public:
     void insertCard() {}
-    void checkPIN() {}
-    void setAccount() {}
 
     int getBalance(bool menu = false) {
+        ll balance = atmc.getBalance();
+
         if (menu) {
-            cout << "[$] Balance is: $" << account.balance << endl << endl;
+            cout << "[$] Balance is: $" << balance << endl << endl;
         }
-        return account.balance;
+
+        return balance;
     }
 
     bool setBalance(int amount) {
         int transaction = getBalance() + amount;
 
         if (transaction > -1) {
-            account.balance = getBalance() + amount;
-            return true;
+            return atmc.setBalance(amount);
         }
         return false;
     }
