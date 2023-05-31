@@ -6,6 +6,7 @@
 //
 
 #include <iostream>
+#include <vector>
 #include "bankAPI.cpp"
 
 typedef long long ll;
@@ -29,13 +30,24 @@ public:
         cin >> cardInfo;
 
         int PIN = 0;
-        while (!api.checkPIN(PIN)) {
+        while (!api.checkPIN(cardInfo, PIN)) {
             cout << "[*] Enter your PIN\n> ";
             cin >> PIN;
         }
 
-        cout << "[*] Select your account\n> ";
-        cin >> accountNumber;
+        int idx = -1;
+        int cnt = 1;
+        cout << "[*] Select your account\n";
+        vector<ll> accounts = api.getAccounts();
+        for (auto account: accounts) {
+            cout << cnt << ". " << account << endl;
+            cnt += 1;
+        }
+        cout << "> ";
+        cin >> idx;
+        
+        cout << "[*] Select " << accounts[idx - 1] << endl << endl;
+        api.setAccount(accounts[idx - 1]);
     }
 
     ll getBalance() {
