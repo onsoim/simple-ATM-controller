@@ -2,20 +2,20 @@
 
 The purpose of this project is **write code for a simple ATM controller** with functions/classes/methods, etc.
 
-> An **ATM controller** (**ATMC**) is a system used in financial institutions to route financial transactions between [ATMs](https://en.wikipedia.org/wiki/Automated_teller_machine "Automated teller machine"), [core banking systems](https://en.wikipedia.org/wiki/Core_banking "Core banking") and other banks. An ATMC is sometimes referred to as an "EFTPOS Switch." An ATM controller is key infrastructure in an [interbank network](https://en.wikipedia.org/wiki/Interbank_network "Interbank network").
+> An **ATM controller** (**ATMC**) is a system used in financial institutions to route financial transactions between [ATMs](https://en.wikipedia.org/wiki/Automated_teller_machine "Automated teller machine"), [core banking systems](https://en.wikipedia.org/wiki/Core_banking "Core banking") and other banks. An ATMC is sometimes referred to as an "EFTPOS Switch." An ATM controller is key infrastructure in an [interbank network](https://en.wikipedia.org/wiki/Interbank_network "Interbank network"). [1]
 
 <br>
 
 ## Requirements
 
 1. Insert Card
-  
+
 2. PIN number
-  
+
 3. Select Account
-  
+
 4. See Balance/Deposit/Withdraw
-  
+
 <br>
 
 > Consider integrating with a real bank system.
@@ -23,9 +23,9 @@ The purpose of this project is **write code for a simple ATM controller** with f
 - Real cash bin in the ATM
   
   - e.g., can't withdraw money exceeding the amount from the cash bin
-    
+
 - Test feasibility
-  
+
 - Testing the controller part
 
 <br>
@@ -50,3 +50,13 @@ You can simplify some complex real world problems if you think it's not worth il
 How to submit
 Please upload the code for this project to GitHub or anywhere, and post a link to your repository below. Please attach the instruction to clone your project, build and run tests in README.md file in the root directory of the repository.
 ```
+
+
+
+## Reference
+
+1. [ATM controller - Wikipedia](https://en.wikipedia.org/wiki/ATM_controller)
+
+2. [ATM Management System using C++ - GeeksforGeeks](https://www.geeksforgeeks.org/atm-management-system-using-cpp/)
+
+3. https://www.firstrepublic.com/insights-education/how-to-use-an-atm
