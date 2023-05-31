@@ -48,6 +48,7 @@ public:
         
         cout << "[*] Select " << accounts[idx - 1] << endl << endl;
         api.setAccount(accounts[idx - 1]);
+        accountNumber = accounts[idx - 1];
     }
 
     ll getBalance() {
