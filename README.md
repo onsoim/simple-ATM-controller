@@ -13,8 +13,6 @@ The purpose of this project is **write code for a simple ATM controller** with f
 3. Select Account
 4. See Balance/Deposit/Withdraw
 
-
-
 > Consider integrating with a real bank system.
 
 - Real cash bin in the ATM
@@ -42,6 +40,34 @@ or just import a project using XCode
 4. Build the project
 
 <br>
+
+## Output
+
+![image-20230531222955720](README.assets/image-20230531222955720-5539800.png)
+
+When you execute the test program (ATMC), you can test a simple ATM controller easily.
+
+There are 3 menus each related to the type of transaction.
+
+![image-20230531223314063](README.assets/image-20230531223314063.png)
+
+If the account is not set yet, setting the account will be at first.
+
+It checks the pair of card information and its pin whether it matched well or not.
+
+And then it gave a list of accounts that belong to the user.
+
+All information about users and accounts is as below.
+
+![image-20230531223916411](README.assets/image-20230531223916411.png)
+
+Now he or she can deposit or withdraw money from own account.
+
+![image-20230531224137807](README.assets/image-20230531224137807.png)
+
+<br>
+
+## Description
 
 ```textile
 Write code for a simple ATM. It doesn't need any UI (either graphical or console), but a controller should be implemented and tested.
