@@ -22,6 +22,8 @@ private:
     ll cashBin = 0;
 
 public:
+    ll getAccount() { return accountNumber; }
+
     void setAccount() {
         cout << "[*] Set account number\n";
 

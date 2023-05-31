@@ -36,6 +36,8 @@ public:
     }
 
     bool deposit() {
+        if (!controller.getAccount()) controller.setAccount();
+
         ll amount = 0;
 
         cout << "[$] Enter amount to be Deposited\n$";
@@ -49,6 +51,8 @@ public:
     }
 
     bool withdraw(ll amount = 0) {
+        if (!controller.getAccount()) controller.setAccount();
+
         ll value = 0;
 
         if (amount == 0) {
