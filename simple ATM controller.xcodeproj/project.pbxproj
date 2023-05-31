@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		786AD8552A274ED6003B28BA /* ATMC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 786AD8532A274ED6003B28BA /* ATMC.cpp */; };
+		786AD8572A27511B003B28BA /* bankAPI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 786AD8562A27511B003B28BA /* bankAPI.cpp */; };
+		786AD8592A275223003B28BA /* CLIENT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 786AD8582A275223003B28BA /* CLIENT.cpp */; };
 		78A349D02A2703A200CF907D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 78A349CF2A2703A200CF907D /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +26,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		786AD8532A274ED6003B28BA /* ATMC.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ATMC.cpp; sourceTree = "<group>"; };
+		786AD8562A27511B003B28BA /* bankAPI.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = bankAPI.cpp; sourceTree = "<group>"; };
+		786AD8582A275223003B28BA /* CLIENT.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CLIENT.cpp; sourceTree = "<group>"; };
 		78A349CC2A2703A200CF907D /* simple ATM controller */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "simple ATM controller"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A349CF2A2703A200CF907D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +64,9 @@
 			isa = PBXGroup;
 			children = (
 				78A349CF2A2703A200CF907D /* main.cpp */,
+				786AD8532A274ED6003B28BA /* ATMC.cpp */,
+				786AD8562A27511B003B28BA /* bankAPI.cpp */,
+				786AD8582A275223003B28BA /* CLIENT.cpp */,
 			);
 			path = "simple ATM controller";
 			sourceTree = "<group>";
@@ -119,7 +128,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				786AD8552A274ED6003B28BA /* ATMC.cpp in Sources */,
 				78A349D02A2703A200CF907D /* main.cpp in Sources */,
+				786AD8592A275223003B28BA /* CLIENT.cpp in Sources */,
+				786AD8572A27511B003B28BA /* bankAPI.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
