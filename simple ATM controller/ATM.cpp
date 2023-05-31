@@ -43,10 +43,12 @@ public:
         cout << "[$] Enter amount to be Deposited\n$";
         cin >> amount;
 
+        if (amount <= 0) return false;
         return setBalance(amount);
     }
 
     bool deposit(ll amount) {
+        if (amount <= 0) return false;
         return setBalance(amount);
     }
 
@@ -58,6 +60,7 @@ public:
         if (amount == 0) {
             cout << "[$] Enter amount to withdraw\n$";
             cin >> value;
+            if (value <= 0) return false;
         }
         else value = amount;
 

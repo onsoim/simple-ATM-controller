@@ -33,13 +33,16 @@ int main(int argc, const char * argv[]) {
                 if (atm.deposit()) {
                     atm.getBalance(true);
                 }
+                else {
+                    cout << "[!] Can't deposit money!\n\n";
+                }
                 break;
             case 3:
                 if (atm.withdraw()) {
                     atm.getBalance(true);
                 }
                 else {
-                    cout << "[!] Can't withdraw money!" << endl << endl;
+                    cout << "[!] Can't withdraw money!\n\n";
                 }
                 break;
             case 4: return 0;
