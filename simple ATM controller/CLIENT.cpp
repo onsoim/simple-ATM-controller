@@ -5,7 +5,7 @@
 //  Created by onsoim on 2023/05/31.
 //
 
-#include <stdio.h>
+#include <iostream>
 #include "ATMC.cpp"
 
 typedef long long ll;
