@@ -72,7 +72,13 @@ public:
 
     bool setBalance(ll delta) {
         if (!accountNumber) setAccount();
-        return api.setBalance(delta);
+
+        if (delta >= 0 ||  cashBin + delta >= 0) {
+            bool res = api.setBalance(delta);
+            if (res) cashBin += delta;
+            return res;
+        }
+        return false;
     }
 };
 
@@ -81,8 +87,6 @@ class CLIENT {
 private:
     ATMC controller;
 public:
-    void insertCard() {}
-
     ll getBalance(bool menu = false) {
         ll balance = controller.getBalance();
 
