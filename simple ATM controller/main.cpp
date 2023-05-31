@@ -33,17 +33,35 @@ public:
 // A system between ATMs (client) and core banking systems (bankAPI)
 class ATMC {
 private:
-   ll cashBin = 0;
-   bankAPI api;
+    bankAPI api;
+    ll accountNumber = NULL;
+
+    ll cashBin = 0;
 public:
-    void checkPIN() {}
-    void setAccount() {}
+    void setAccount() {
+        cout << "[*] Set account number\n";
+
+        ll cardInfo = NULL;
+        cout << "[*] Insert your card\n> ";
+        cin >> cardInfo;
+
+        int PIN = 0;
+        while (!api.checkPIN(PIN)) {
+            cout << "[*] Enter your PIN\n> ";
+            cin >> PIN;
+        }
+
+        cout << "[*] Select your account\n> ";
+        cin >> accountNumber;
+    }
 
     ll getBalance() {
+        if (!accountNumber) setAccount();
         return api.getBalance();
     }
 
     bool setBalance(ll delta) {
+        if (!accountNumber) setAccount();
         return api.setBalance(delta);
     }
 };
