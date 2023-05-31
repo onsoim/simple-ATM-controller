@@ -51,10 +51,6 @@ public:
 // An ATM (client)
 class CLIENT {
 private:
-    struct ACCOUNT {
-        string number = "";
-        ll balance = 0;
-    } account;
     ATMC atmc;
 public:
     void insertCard() {}
@@ -70,9 +66,7 @@ public:
     }
 
     bool setBalance(ll amount) {
-        ll transaction = getBalance() + amount;
-
-        if (transaction > -1) {
+        if (getBalance() + amount > -1) {
             return atmc.setBalance(amount);
         }
         return false;
@@ -106,7 +100,6 @@ public:
 
 int main(int argc, const char * argv[]) {
     CLIENT client;
-
     int menu = -1;
 
     while (1) {
@@ -132,7 +125,7 @@ int main(int argc, const char * argv[]) {
                     client.getBalance(true);
                 }
                 else {
-                    cout << "[!] Can't withdraw money!"<< endl << endl;
+                    cout << "[!] Can't withdraw money!" << endl << endl;
                 }
                 break;
             case 4: return 0;
