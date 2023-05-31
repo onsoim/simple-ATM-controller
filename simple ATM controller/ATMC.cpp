@@ -25,27 +25,34 @@ public:
     void setAccount() {
         cout << "[*] Set account number\n";
 
+    RESET:
         ll cardInfo = NULL;
         cout << "[*] Insert your card\n> ";
         cin >> cardInfo;
 
         int PIN = 0;
         while (!api.checkPIN(cardInfo, PIN)) {
-            cout << "[*] Enter your PIN\n> ";
+            cout << "[*] Enter your PIN (-1 will reset cardInfo)\n> ";
             cin >> PIN;
+
+            if (PIN == -1) goto RESET;
         }
 
         int idx = -1;
-        int cnt = 1;
-        cout << "[*] Select your account\n";
         vector<ll> accounts = api.getAccounts();
-        for (auto account: accounts) {
-            cout << cnt << ". " << account << endl;
-            cnt += 1;
+
+        while (idx <= 0 || idx > accounts.size()) {
+            cout << "[*] Select your account (-1 will reset cardInfo)\n";
+            int cnt = 1;
+            for (auto account: accounts) {
+                cout << cnt << ". " << account << endl;
+                cnt += 1;
+            }
+            cout << "> ";
+            cin >> idx;
+            if (idx == -1) goto RESET;
         }
-        cout << "> ";
-        cin >> idx;
-        
+
         cout << "[*] Select " << accounts[idx - 1] << endl << endl;
         api.setAccount(accounts[idx - 1]);
         accountNumber = accounts[idx - 1];
