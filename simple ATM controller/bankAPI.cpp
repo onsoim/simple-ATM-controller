@@ -6,24 +6,28 @@
 //
 
 #include <iostream>
+#include <list>
 
 typedef long long ll;
 
 using namespace std;
 
+struct USER {
+    ll cardInfo;
+    int PIN;
+    list<ll> accountNumbers;
+};
+
+struct ACCOUNT {
+    ll accounNumber;
+    ll balance;
+};
+
 // Core banking systems (bankAPI)
 class bankAPI {
 private:
-    struct USER {
-        ll cardInfo = 12341234;
-        int PIN = 1234;
-        ll accounNumber = 123412341234;
-    } user;
-
-    struct ACCOUNT {
-        ll accounNumber = 123412341234;
-        ll balance = 0;
-    } account;
+    USER user {12341234, 1234, {123412341234, 1413414214}};
+    ACCOUNT account {123412341234, 0};
 
 public:
     bool checkPIN(int PIN) {
@@ -35,7 +39,10 @@ public:
     }
 
     bool setBalance(ll delta) {
-        account.balance += delta;
-        return true;
+        if (getBalance() + delta > -1) {
+            account.balance += delta;
+            return true;
+        }
+        return false;
     }
 };
